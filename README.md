@@ -131,7 +131,7 @@ Next, you can use AWS Serverless Application Repository to deploy ready to use A
 On root directory (i.e. inside sam-app)
 ```bash
  sam build
-sam package --template-file template.yaml --output-template-file pck.yml --s3-bucket khirod-first-sam-project
+sam package --template-file template.yaml --output-template-file pck.yml --s3-bucket <s3-bucket-name>
  sam deploy --region us-east-1 --capabilities CAPABILITY_IAM --template-file pck.yml --stack-name first-sam-project
 ```
  ## For Local invoke 
