@@ -128,13 +128,18 @@ Next, you can use AWS Serverless Application Repository to deploy ready to use A
 
 
 ## Steps to follow post dev
-On root directory (i.e. /Users/khirodchandra.panda/workspace/first-sam-project/sam-app)
+On root directory (i.e. inside sam-app)
+```bash
  sam build
- sam package --template-file template.yaml --output-template-file pck.yml --s3-bucket khirod-first-sam-project
+sam package --template-file template.yaml --output-template-file pck.yml --s3-bucket khirod-first-sam-project
  sam deploy --region us-east-1 --capabilities CAPABILITY_IAM --template-file pck.yml --stack-name first-sam-project
-
+```
  ## For Local invoke 
+ ```bash
  sam local invoke ClockFunction
+ ```
  ## For cleanup 
+ ```bash
  aws cloudformation delete-stack --stack-name first-sam-project
+ ```
 
