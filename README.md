@@ -128,11 +128,14 @@ Next, you can use AWS Serverless Application Repository to deploy ready to use A
 
 
 ## Steps to follow post dev
+We need a S3 bucket where the build will be uploaded 
+
 On root directory (i.e. inside sam-app)
 ```bash
- sam build
+aws s3api create-bucket --bucket <s3-bucket-name> --region us-east-1
+sam build
 sam package --template-file template.yaml --output-template-file pck.yml --s3-bucket <s3-bucket-name>
- sam deploy --region us-east-1 --capabilities CAPABILITY_IAM --template-file pck.yml --stack-name first-sam-project
+sam deploy --region us-east-1 --capabilities CAPABILITY_IAM --template-file pck.yml --stack-name first-sam-project
 ```
  ## For Local invoke 
  ```bash
